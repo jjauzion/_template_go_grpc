@@ -24,8 +24,8 @@ import (
 	"log"
 	"net"
 
+	pb "github.com/Interstellar-Lab/gateway/go/proto"
 	"google.golang.org/grpc"
-	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
 
 const (

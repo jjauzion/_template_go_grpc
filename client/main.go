@@ -21,13 +21,13 @@ package main
 // Package main implements a client for Greeter service.
 
 import (
-"context"
-"log"
-"os"
-"time"
+	"context"
+	"log"
+	"os"
+	"time"
 
-"google.golang.org/grpc"
-pb "google.golang.org/grpc/examples/helloworld/helloworld"
+	pb "github.com/Interstellar-Lab/gateway/go/proto"
+	"google.golang.org/grpc"
 )
 
 const (

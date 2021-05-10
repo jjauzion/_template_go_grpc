@@ -2,7 +2,7 @@
 ##   Param   ##
 ###############
 
-EXE = gateway
+EXE = change_exe_name_in_makefile.exe
 
 GPB ?= 3.13.0
 GPB_IMG ?= namely/protoc
@@ -15,8 +15,6 @@ PROTOLOCK ?= $(RUN) -v $$PWD:/protolock -w /protolock nilslice/protolock
 PB_FILES = $(patsubst proto/%.proto,proto/%.pb.go,$(wildcard proto/*.proto))
 PROTO_LOCK_FILE = proto.lock
 
-SRC_FILE = $(wildcard pkg/*.go) \
-		   main.go
 
 ###############
 ##   Help    ##
@@ -30,9 +28,10 @@ help:
 ###############
 
 all: #HELP: compile, lint and generates x_files and grpc files
-all: proto lint $(EXE)
+all: proto lint compile
 
-$(EXE): $(SRC_FILE)
+.PHONY: compile
+compile:
 	CGO_ENABLED=0 go build -o $(EXE)$(if $(wildcard $(EXE)), || rm $(EXE))
 
 # lint: MAKEFLAGS += -j
