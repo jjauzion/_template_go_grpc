@@ -1,0 +1,52 @@
+{
+  "definitions": [
+    {
+      "protopath": "proto:/:helloworld.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "HelloRequest",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "HelloReply",
+            "fields": [
+              {
+                "id": 1,
+                "name": "message",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "services": [
+          {
+            "name": "Greeter",
+            "rpcs": [
+              {
+                "name": "SayHello",
+                "in_type": "HelloRequest",
+                "out_type": "HelloReply"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "test"
+        },
+        "options": [
+          {
+            "name": "go_package",
+            "value": "./proto"
+          }
+        ]
+      }
+    }
+  ]
+}

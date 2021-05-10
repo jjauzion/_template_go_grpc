@@ -1,0 +1,7 @@
+# Project specific
+
+# Env
+.env
+
+# IDE
+.idea
